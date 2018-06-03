@@ -55,4 +55,6 @@ Rails.application.routes.draw do
   #   end
   
   resources :posts
+  
+  root 'posts#index'
 end
