@@ -1,2 +1,21 @@
 <h1><%= @post.title %></h1>
 <p><%= simple_format @post.body %></p>
+
+<h3>Comments</h3>
+<%= form_for ([@post, @post.comments.build]) do |f| %>
+<p>
+   <%= f.text_field :body %>
+</p>
+<p>
+   <%= f.submit %> 
+</p>
+<% end %>
+
+<script>
+$(function(){
+   $('#post_body').bind('keyup', function(){
+      var thisValueLength = $(this).val().length;
+      $('#char-length').html(thisValueLength);
+   });
+});
+</script>

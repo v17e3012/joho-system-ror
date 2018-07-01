@@ -1,17 +1,29 @@
 <%= form_for @post do |f| %>
 <p>
-   <%= f.text_field :title, placeholder: 'enter title' %> 
-   <% if @post.errors.messages[:title].any? %>
-   <span class="error"><%= @post.errors.messages[:title][0] %></span>
-   <% end %>
+   <%= f.text_field :title, placeholder: 'enter title' %>
 </p>
+<% if @post.errors.messages[:title].any? %>
+   <span class="error"><%= @post.errors.messages[:title][0] %></span>
+<% end %>
+
 <p>
    <%= f.text_area :body, placeholder: 'enter body text' %> 
-   <% if @post.errors.messages[:body].any? %>
-   <span class="error"><%= @post.errors.messages[:body][0] %></span>
-   <% end %>
+   文字数： <span id="char-length"></span>
 </p>
+<% if @post.errors.messages[:body].any? %>
+   <span class="error"><%= @post.errors.messages[:body][0] %></span>
+<% end %>
+
 <p>
    <%= f.submit %> 
 </p>
 <% end %>
+
+<script>
+$(function(){
+   $('#post_body').bind('keyup', function(){
+      var thisValueLength = $(this).val().length;
+      $('#char-length').html(thisValueLength);
+   });
+});
+</script>
