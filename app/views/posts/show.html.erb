@@ -21,7 +21,8 @@
    <%= f.text_field :body %>
 </p>
 <p>
-   <%= f.submit %> 
+   <%= f.submit class: 'btn btn-sm btn-primary' %> 
+   <%= link_to t('.main'), posts_path, class: 'btn btn-sm btn-primary' %>
 </p>
 <% end %>
 

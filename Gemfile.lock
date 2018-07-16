@@ -42,7 +42,13 @@ GEM
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
     arel (8.0.0)
+    autoprefixer-rails (8.6.5)
+      execjs
     bindex (0.5.0)
+    bootstrap (4.1.1)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.9, < 2)
+      sass (>= 3.5.2)
     builder (3.2.3)
     byebug (10.0.2)
     coffee-rails (4.2.2)
@@ -59,6 +65,7 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    http_accept_language (2.1.1)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     i18n_generators (2.2.0)
@@ -85,6 +92,7 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.3)
       mini_portile2 (~> 2.3.0)
+    popper_js (1.12.9)
     rack (2.0.5)
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
@@ -164,8 +172,10 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (~> 2.7.0)
+  bootstrap (~> 4.1.1)
   byebug
   coffee-rails
+  http_accept_language (~> 2.1.1)
   i18n_generators (~> 2.1)
   jbuilder (~> 2.0)
   jquery-rails
