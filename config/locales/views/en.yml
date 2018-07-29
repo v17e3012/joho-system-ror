@@ -9,3 +9,7 @@ en:
             main: Main page
         form:
             main: Main page
+        signin:
+            signin: Sign In
+            signout: Sign Out
+            signup: Sign Up

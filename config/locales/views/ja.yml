@@ -9,3 +9,7 @@ ja:
             main: メインページへ
         form:
             main: メインページへ
+        signin:
+            signin: サインイン
+            signout: サインアウト
+            signup: サインアップ
