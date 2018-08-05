@@ -1,36 +1,35 @@
 <h1><%= @post.title %></h1>
+<p class="text-right"><%= @post.user.display_name %></p>
 <p><%= simple_format @post.body %></p>
 
 <h3>Comments</h3>
 <% if @post.comments.any? %>
-   <ul>
-      <% @post.comments.each do |comment| %>
-         <li>
-            <%= comment.body %>
-            <%= link_to  '[x]',
-            post_comment_path(@post, comment),
-            method: :delete,
-            class: 'command',
-            data: { confirm: 'Sure?'}%>
-         </li>
-      <% end %>
-   </ul>
+  <ul>
+    <% @post.comments.each do |comment| %>
+      <li>
+        <%= comment.body %>
+        <% if current_user && current_user.id == @post.user_id  %>
+          <%= link_to '[x]', post_comment_path(@post, comment), method: :delete, class: 'command', data: { confirm: 'Sure?'}%>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
 <%= form_for ([@post, @post.comments.build]) do |f| %>
 <p>
-   <%= f.text_field :body %>
+  <%= f.text_field :body %>
 </p>
 <p>
-   <%= f.submit class: 'btn btn-sm btn-primary' %> 
-   <%= link_to t('.main'), posts_path, class: 'btn btn-sm btn-primary' %>
+  <%= f.submit class: 'btn btn-sm btn-primary' %>
+  <%= link_to t('.main'), posts_path, class: 'btn btn-sm btn-primary' %>
 </p>
 <% end %>
 
 <script>
-$(function(){
-   $('#post_body').bind('keyup', function(){
-      var thisValueLength = $(this).val().length;
-      $('#char-length').html(thisValueLength);
-   });
+$(function () {
+  $('#post_body').bind('keyup', function () {
+    var thisValueLength = $(this).val().length;
+    $('#char-length').html(thisValueLength);
+  });
 });
 </script>

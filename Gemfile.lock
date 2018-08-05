@@ -94,6 +94,8 @@ GEM
     nokogiri (1.8.3)
       mini_portile2 (~> 2.3.0)
     popper_js (1.12.9)
+    pundit (2.0.0)
+      activesupport (>= 3.0.0)
     rack (2.0.5)
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
@@ -181,6 +183,7 @@ DEPENDENCIES
   i18n_generators (~> 2.1)
   jbuilder (~> 2.0)
   jquery-rails
+  pundit
   rails (~> 5.1.0)
   sass-rails
   sdoc (~> 0.4.0)

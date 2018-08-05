@@ -49,5 +49,6 @@ group :development do
   
   gem 'annotate', '~> 2.7.0'
   gem 'i18n_generators', '~> 2.1'
+  gem "pundit"
 end
 
